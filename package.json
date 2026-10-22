@@ -1,0 +1,19 @@
+{
+  "name": "empire-architect",
+  "version": "1.0.0",
+  "description": "Original idle business strategy and tycoon simulation browser game",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "game",
+    "idle-game",
+    "tycoon",
+    "simulation",
+    "vanilla-js"
+  ],
+  "author": "Empire Architect",
+  "license": "MIT"
+}

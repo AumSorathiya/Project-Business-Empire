@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Empire Architect - An idle business strategy and tycoon simulation. Establish enterprises, optimize technologies, manage cash flow, and construct a sprawling financial empire.">
+  <meta name="theme-color" content="#F8FAFC">
+  <title>Empire Architect | Business Tycoon & Financial Simulation</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23D6AD58'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function(regs) {
+        for (var i = 0; i < regs.length; i++) { regs.unregister(); }
+      });
+    }
+  </script>
+
+  <!-- Google Fonts: Outfit, Space Grotesk, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/tokens.css?v=light1">
+  <link rel="stylesheet" href="css/reset.css?v=light1">
+  <link rel="stylesheet" href="css/layout.css?v=light1">
+  <link rel="stylesheet" href="css/components.css?v=light1">
+  <link rel="stylesheet" href="css/dashboard.css?v=light1">
+  <link rel="stylesheet" href="css/business-empire.css?v=be1">
+  <link rel="stylesheet" href="css/interactive-game.css?v=game1">
+  <link rel="stylesheet" href="css/responsive.css?v=light1">
+</head>
+<body>
+  <div class="app-shell">
+    <!-- Backdrop for mobile drawer -->
+    <div class="sidebar-backdrop" id="sidebar-backdrop" aria-hidden="true"></div>
+
+    <!-- Sidebar Navigation -->
+    <aside class="app-sidebar" aria-label="Main Navigation">
+      <div class="sidebar-header">
+        <div class="brand-icon" aria-hidden="true">
+          <img src="assets/illustrations/empire-logo.jpg" alt="Empire Architect Logo" class="brand-icon-img" />
+        </div>
+        <div>
+          <div class="brand-title">Empire: RichMan</div>
+          <div class="brand-subtitle">Commercial Syndicate</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#dashboard" class="nav-item active" data-view="dashboard" id="nav-dashboard">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="9"></rect>
+              <rect x="14" y="3" width="7" height="5"></rect>
+              <rect x="14" y="12" width="7" height="9"></rect>
+              <rect x="3" y="16" width="7" height="5"></rect>
+            </svg>
+          </div>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="#businesses" class="nav-item" data-view="businesses" id="nav-businesses">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <span>Enterprises (21)</span>
+        </a>
+
+        <a href="#investments" class="nav-item" data-view="investments" id="nav-investments">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </div>
+          <span>Investments</span>
+        </a>
+
+        <a href="#luxury" class="nav-item" data-view="luxury" id="nav-luxury">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <span>Luxury Collection</span>
+        </a>
+
+        <a href="#insignias" class="nav-item" data-view="insignias" id="nav-insignias">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="7"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
+          <span>Insignias & Profile</span>
+        </a>
+
+        <a href="#upgrades" class="nav-item" data-view="upgrades" id="nav-upgrades">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <span>Technologies</span>
+        </a>
+
+        <a href="#achievements" class="nav-item" data-view="achievements" id="nav-achievements">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+              <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+              <path d="M4 22h16"></path>
+              <path d="M10 14.66V17c0 .55-.45 1-1 1H7"></path>
+              <path d="M14 14.66V17c0 .55.45 1 1 1h2"></path>
+              <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+            </svg>
+          </div>
+          <span>Milestones</span>
+          <span class="nav-badge" id="nav-achievements-badge" aria-label="Completed milestones count"></span>
+        </a>
+
+        <a href="#statistics" class="nav-item" data-view="statistics" id="nav-statistics">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"></line>
+              <line x1="12" y1="20" x2="12" y2="4"></line>
+              <line x1="6" y1="20" x2="6" y2="14"></line>
+            </svg>
+          </div>
+          <span>Statistics</span>
+        </a>
+
+        <a href="#settings" class="nav-item" data-view="settings" id="nav-settings">
+          <div class="nav-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div>Empire: RichMan v2.0</div>
+        <div>Standard Local Save Mode</div>
+      </div>
+    </aside>
+
+    <!-- Main Content Shell -->
+    <div class="app-main">
+      <!-- Sticky Top Financial Bar -->
+      <header class="app-topbar">
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle navigation drawer">
+          <svg style="width: 24px; height: 24px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+
+        <div class="metrics-strip">
+          <div class="metric-item">
+            <span class="metric-label">Cash</span>
+            <span class="metric-value cash" id="topbar-cash">0</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Net Worth</span>
+            <span class="metric-value" id="topbar-net-worth">0</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Hourly Income</span>
+            <span class="metric-value income" id="topbar-income">+0/hr</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Slots</span>
+            <span class="metric-value" id="topbar-slots" style="color: var(--color-gold);">0 / 21</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-label">Standing</span>
+            <span class="metric-value" id="topbar-level" style="color: var(--color-gold);">Lvl 1</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Live Theme & Color Palette Selector -->
+          <div style="position: relative;">
+            <button id="theme-toggle-btn" class="theme-palette-btn" title="Change Visual Color Palette">
+              <span>🎨</span>
+              <span class="theme-btn-label">Obsidian Gold</span>
+              <span style="font-size: 10px; opacity: 0.7;">▾</span>
+            </button>
+            <div id="theme-dropdown-menu" class="theme-dropdown-menu">
+              <div style="padding: 4px 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-gold); font-weight: bold;">
+                Select Luxury Palette
+              </div>
+              <div class="theme-option-item active" data-theme-id="obsidian">
+                <div class="theme-swatch">
+                  <div class="theme-swatch-dot" style="background: #090C12;"></div>
+                  <div class="theme-swatch-dot" style="background: #D4AF37;"></div>
+                  <div class="theme-swatch-dot" style="background: #10B981;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 600; font-size: 13px; color: #F8FAFC;">Obsidian & Gold</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Executive 24K Luxury</div>
+                </div>
+              </div>
+              <div class="theme-option-item" data-theme-id="emerald">
+                <div class="theme-swatch">
+                  <div class="theme-swatch-dot" style="background: #05100B;"></div>
+                  <div class="theme-swatch-dot" style="background: #10B981;"></div>
+                  <div class="theme-swatch-dot" style="background: #EAB308;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 600; font-size: 13px; color: #F8FAFC;">Emerald Dynasty</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Macau High Roller & Jade</div>
+                </div>
+              </div>
+              <div class="theme-option-item" data-theme-id="sapphire">
+                <div class="theme-swatch">
+                  <div class="theme-swatch-dot" style="background: #060B16;"></div>
+                  <div class="theme-swatch-dot" style="background: #38BDF8;"></div>
+                  <div class="theme-swatch-dot" style="background: #3B82F6;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 600; font-size: 13px; color: #F8FAFC;">Midnight Sapphire</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Wall Street & Swiss Bank</div>
+                </div>
+              </div>
+              <div class="theme-option-item" data-theme-id="cyber">
+                <div class="theme-swatch">
+                  <div class="theme-swatch-dot" style="background: #050608;"></div>
+                  <div class="theme-swatch-dot" style="background: #F59E0B;"></div>
+                  <div class="theme-swatch-dot" style="background: #EC4899;"></div>
+                </div>
+                <div>
+                  <div style="font-weight: 600; font-size: 13px; color: #F8FAFC;">Cyber Carbon</div>
+                  <div style="font-size: 11px; color: #94A3B8;">Tokyo Syndicate & Amber</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button id="topbar-tap-btn" class="topbar-tap-btn" title="Tap to generate capital">
+            <img src="assets/illustrations/tap-coin.png" alt="Coin" class="topbar-coin-img" />
+            +$1.00
+          </button>
+          <button id="sound-toggle-btn" class="icon-toggle-btn" aria-label="Toggle Sound Effects" title="Toggle Sound">
+            <svg class="sound-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            </svg>
+            <svg class="sound-icon-off" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+              <line x1="23" y1="9" x2="17" y2="15"></line>
+              <line x1="17" y1="9" x2="23" y2="15"></line>
+            </svg>
+          </button>
+          <div class="save-status-badge" id="save-status">
+            <span class="indicator-dot"></span>
+            <span class="status-text">Saved</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- View Containers -->
+      <main class="app-content">
+        <!-- Dashboard View -->
+        <section class="view-section active" data-view="dashboard" id="view-dashboard">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Empire Command</h1>
+              <p>Corporate financial telemetry, portfolio equity, and expansion operations.</p>
+            </div>
+          </div>
+          <div id="dashboard-view-content"></div>
+        </section>
+
+        <!-- Enterprises View (21 slots & Mergers) -->
+        <section class="view-section" data-view="businesses" id="view-businesses">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Commercial Enterprises</h1>
+              <p>Acquire and manage operational holdings across logistics, technology, hospitality, and energy (Max 21 Slots).</p>
+            </div>
+          </div>
+          <div id="businesses-view-content"></div>
+        </section>
+
+        <!-- Investments View (Stocks, Crypto, Real Estate) -->
+        <section class="view-section" data-view="investments" id="view-investments">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Capital Investments</h1>
+              <p>Equities with dividend yields, high-beta crypto swing trading, and global rental properties.</p>
+            </div>
+          </div>
+          <div id="investments-view-content"></div>
+        </section>
+
+        <!-- Luxury Showroom View -->
+        <section class="view-section" data-view="luxury" id="view-luxury">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Luxury & Trophy Collection</h1>
+              <p>High-net-worth acquisitions: bespoke supercars, megayachts up to $45B, private aircraft, and private islands.</p>
+            </div>
+          </div>
+          <div id="luxury-view-content"></div>
+        </section>
+
+        <!-- Insignias & Profile View -->
+        <section class="view-section" data-view="insignias" id="view-insignias">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Insignias & Tycoon Profile</h1>
+              <p>Track your status across the 5 Legendary Insignias from Rich Man to The Owner ($5,000 Trillion).</p>
+            </div>
+          </div>
+          <div id="insignias-view-content"></div>
+        </section>
+
+        <!-- Technologies / Upgrades View -->
+        <section class="view-section" data-view="upgrades" id="view-upgrades">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Technological Optimizations</h1>
+              <p>Deploy research upgrades to scale operational efficiency and compound enterprise profit margins.</p>
+            </div>
+          </div>
+          <div id="upgrades-view-content"></div>
+        </section>
+
+        <!-- Milestones / Achievements View -->
+        <section class="view-section" data-view="achievements" id="view-achievements">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Syndicate Milestones</h1>
+              <p>Attain strategic objectives to collect financial capital bonuses and prestige.</p>
+            </div>
+          </div>
+          <div id="achievements-view-content"></div>
+        </section>
+
+        <!-- Statistics View -->
+        <section class="view-section" data-view="statistics" id="view-statistics">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Financial & Operational Audit</h1>
+              <p>Complete historical analytics, session playtime, and enterprise revenue performance.</p>
+            </div>
+          </div>
+          <div id="statistics-view-content"></div>
+        </section>
+
+        <!-- Settings View -->
+        <section class="view-section" data-view="settings" id="view-settings">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h1>Executive Settings</h1>
+              <p>Manage persistence storage, display formats, and administrative options.</p>
+            </div>
+          </div>
+          <div id="settings-view-content"></div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Confetti Celebration Canvas -->
+  <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+
+  <!-- ES Module Application Bootstrap -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
