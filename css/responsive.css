@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Empire Architect: Responsive Adaptation
+   Mobile-first & Desktop breakpoints per Design.md
+   ========================================================================== */
+
+/* Tablet & Mobile Breakpoints */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .dashboard-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-banner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .milestone-progress-wrap {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .app-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.45);
+    z-index: 45;
+  }
+
+  .sidebar-backdrop.active {
+    display: block;
+  }
+
+  .app-topbar {
+    padding: 0 var(--space-16);
+  }
+
+  .metrics-strip {
+    gap: var(--space-16);
+  }
+
+  .metric-value {
+    font-size: var(--font-size-sm);
+  }
+
+  .app-content {
+    padding: var(--space-16);
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .toast-container {
+    left: var(--space-16);
+    right: var(--space-16);
+    bottom: var(--space-16);
+  }
+
+  .toast {
+    min-width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-stats-row {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-steps {
+    grid-template-columns: 1fr;
+  }
+}

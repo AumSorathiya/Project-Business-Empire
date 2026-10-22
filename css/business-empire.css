@@ -1,0 +1,646 @@
+/* ==========================================================================
+   Business Empire: RichMan Styling System
+   Fintech Dashboard, Subnav Tabs, 21 Slots, Stocks, Crypto, Real Estate, Luxury
+   ========================================================================== */
+
+/* Subnav Bar & Tabs */
+.be-subnav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-12);
+  margin-bottom: var(--space-20);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.be-tabs {
+  display: flex;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.be-tab-btn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.be-tab-btn:hover {
+  background: var(--color-surface-hover);
+  color: var(--color-text);
+  border-color: var(--color-border-focus);
+}
+
+.be-tab-btn.active {
+  background: var(--gradient-gold);
+  color: #070A10;
+  font-weight: 700;
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.35);
+}
+
+/* Slots Pill */
+.slots-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+}
+
+.slots-pill .slots-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-positive);
+}
+
+.slots-pill.full .slots-dot {
+  background: var(--color-negative);
+}
+
+/* Grids */
+.be-owned-grid,
+.be-catalog-grid,
+.be-mergers-grid,
+.invest-grid,
+.insignias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-16);
+}
+
+/* Cards */
+.be-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-18);
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.be-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-border-focus);
+  box-shadow: var(--shadow-md);
+}
+
+.be-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-10);
+}
+
+.be-card-badge {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  background: rgba(217, 119, 6, 0.12);
+  color: var(--color-gold);
+  border: 1px solid rgba(217, 119, 6, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.be-card-level {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  font-family: var(--font-family-mono);
+}
+
+.be-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  margin-bottom: var(--space-6);
+}
+
+.be-card-desc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin-bottom: var(--space-14);
+  flex-grow: 1;
+}
+
+.be-card-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-10);
+  background: rgba(0, 0, 0, 0.2);
+  padding: var(--space-10);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-14);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.metric-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.metric-block .m-label {
+  font-size: 10px;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.metric-block .m-val {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-mono);
+  color: var(--color-text);
+}
+
+.metric-block .m-val.income {
+  color: var(--color-positive);
+}
+
+.be-card-actions {
+  display: flex;
+  gap: var(--space-8);
+  margin-top: auto;
+}
+
+.be-card-actions .btn {
+  flex: 1;
+}
+
+/* Specialized Bank Preview */
+.be-specialized-preview {
+  background: rgba(217, 119, 6, 0.06);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-10);
+  margin-bottom: var(--space-14);
+  font-size: var(--font-size-xs);
+}
+
+.be-specialized-preview .slider-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+  color: var(--color-text);
+}
+
+.be-specialized-preview .vault-info {
+  color: var(--color-gold);
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Merger Requirements */
+.merger-requirements-list {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: var(--radius-sm);
+  padding: var(--space-10);
+  margin-bottom: var(--space-14);
+  border: 1px solid var(--color-border);
+}
+
+.merger-requirements-list .req-title {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.merger-requirements-list .req-item {
+  font-size: var(--font-size-xs);
+  padding: 3px 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.merger-requirements-list .req-item.met {
+  color: var(--color-positive);
+}
+
+.merger-requirements-list .req-item.unmet {
+  color: var(--color-text-dim);
+}
+
+/* Investment Banners */
+.invest-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-16);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-16) var(--space-20);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-20);
+}
+
+.banner-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-stat .label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.banner-stat .value {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-mono);
+  color: var(--color-text);
+}
+
+.banner-stat .value.income {
+  color: var(--color-positive);
+}
+
+/* Ticker & Price Badges */
+.ticker-badge {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  background: rgba(59, 130, 246, 0.15);
+  color: #60A5FA;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  margin-right: 6px;
+}
+
+.ticker-badge.crypto {
+  background: rgba(234, 179, 8, 0.15);
+  color: #FACC15;
+  border-color: rgba(234, 179, 8, 0.3);
+}
+
+.ticker-badge.gold {
+  background: rgba(217, 119, 6, 0.15);
+  color: var(--color-gold);
+  border-color: rgba(217, 119, 6, 0.3);
+}
+
+.stock-sector {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.stock-price {
+  font-family: var(--font-family-mono);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--color-text);
+}
+
+.stock-price.crypto-price {
+  color: #FACC15;
+}
+
+.stock-trade-controls {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+  margin-top: auto;
+}
+
+.trade-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.trade-label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  width: 75px;
+}
+
+/* Topbar Tap Button */
+.topbar-tap-btn {
+  background: var(--gradient-gold);
+  border: 1px solid var(--color-gold);
+  color: #FFFFFF;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xs);
+  padding: 6px 12px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(217, 119, 6, 0.3);
+}
+
+.topbar-tap-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.45);
+}
+
+.topbar-tap-btn:active {
+  transform: scale(0.95);
+}
+
+/* Tycoon Profile Card */
+.tycoon-profile-card {
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(15, 23, 42, 0.8));
+  border: 1px solid rgba(217, 119, 6, 0.35);
+  border-radius: var(--radius-lg);
+  padding: var(--space-24);
+  margin-bottom: var(--space-24);
+  box-shadow: var(--shadow-lg);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-20);
+}
+
+.profile-avatar {
+  font-size: 40px;
+  background: rgba(217, 119, 6, 0.2);
+  border: 2px solid var(--color-gold);
+  border-radius: 50%;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-info {
+  flex-grow: 1;
+}
+
+.profile-info h2 {
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.profile-subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.profile-networth {
+  text-align: right;
+}
+
+.profile-networth .nw-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.profile-networth .nw-value {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  font-family: var(--font-family-mono);
+  color: var(--color-gold);
+}
+
+.profile-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-12);
+  background: rgba(0, 0, 0, 0.3);
+  padding: var(--space-16);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.breakdown-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.breakdown-item .b-label {
+  font-size: 11px;
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.breakdown-item .b-val {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-mono);
+  color: var(--color-text);
+}
+
+.breakdown-item .b-val.income {
+  color: var(--color-positive);
+}
+
+/* Insignia Card */
+.insignia-card {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.insignia-card.unlocked {
+  border-color: var(--color-gold);
+  background: linear-gradient(145deg, rgba(217, 119, 6, 0.08), var(--color-surface));
+}
+
+.insignia-tier {
+  font-size: 11px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold);
+  letter-spacing: 0.08em;
+}
+
+.insignia-badge-status {
+  font-size: 10px;
+  font-weight: var(--font-weight-bold);
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.badge-gold {
+  background: var(--gradient-gold);
+  color: #FFFFFF;
+}
+
+.badge-locked {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--color-text-dim);
+}
+
+.insignia-target {
+  font-size: var(--font-size-xs);
+  color: var(--color-gold);
+  margin-bottom: 6px;
+}
+
+.insignia-progress-bar-container {
+  height: 6px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.insignia-progress-bar {
+  height: 100%;
+  background: var(--gradient-gold);
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.insignia-progress-label {
+  font-size: 10px;
+  color: var(--color-text-dim);
+  text-align: right;
+  margin-top: 4px;
+  font-family: var(--font-family-mono);
+}
+
+/* Card Image Banners & Media */
+.be-card-banner {
+  position: relative;
+  width: calc(100% + var(--space-18) * 2);
+  margin: calc(-1 * var(--space-18)) calc(-1 * var(--space-18)) var(--space-14) calc(-1 * var(--space-18));
+  height: 140px;
+  overflow: hidden;
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+  background: var(--color-background);
+}
+
+.be-card-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.be-card:hover .be-card-banner img {
+  transform: scale(1.06);
+}
+
+.be-card-banner .be-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 14, 19, 0) 35%, rgba(11, 14, 19, 0.95) 100%);
+  pointer-events: none;
+}
+
+.be-card-banner.merger-banner {
+  height: 165px;
+}
+
+.be-card-banner.luxury-banner {
+  height: 155px;
+}
+
+.be-card-banner.prop-banner {
+  height: 145px;
+}
+
+/* Logos & Icons */
+.stock-logo-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.crypto-icon-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Insignias Emblem */
+.insignia-emblem-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 0 8px;
+}
+
+.insignia-badge-img {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.insignia-badge-img.emblem-locked {
+  filter: grayscale(1) opacity(0.35);
+}
+
+.insignia-badge-img.emblem-unlocked {
+  filter: drop-shadow(0 0 16px rgba(214, 173, 88, 0.55));
+  animation: insigniaPulse 3s infinite ease-in-out;
+}
+
+@keyframes insigniaPulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 16px rgba(214, 173, 88, 0.5)); }
+  50% { transform: scale(1.03); filter: drop-shadow(0 0 24px rgba(214, 173, 88, 0.75)); }
+}
+
+/* Tap Coin Graphics */
+.topbar-coin-img {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;
+  vertical-align: -3px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+}
+
+.dealmaker-coin-img {
+  width: 26px;
+  height: 26px;
+  margin-right: 8px;
+  vertical-align: -6px;
+  filter: drop-shadow(0 2px 6px rgba(214, 173, 88, 0.4));
+  transition: transform 0.15s ease;
+}
+
+.dealmaker-btn:active .dealmaker-coin-img {
+  transform: rotate(-15deg) scale(1.15);
+}
+
+.brand-logo-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+

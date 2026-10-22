@@ -1,0 +1,454 @@
+/* ==========================================================================
+   Empire Architect: Dashboard Styles
+   ========================================================================== */
+
+/* Hero / Milestone Banner */
+.milestone-banner {
+  position: relative;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-20) var(--space-24);
+  margin-bottom: var(--space-24);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-20);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.milestone-banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../assets/illustrations/cityscape.jpg') center right / cover no-repeat;
+  opacity: 0.85;
+  filter: contrast(102%);
+  pointer-events: none;
+}
+
+.milestone-banner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #070A10 0%, rgba(7, 10, 16, 0.95) 45%, rgba(7, 10, 16, 0.65) 80%, rgba(7, 10, 16, 0.25) 100%);
+  pointer-events: none;
+}
+
+.tech-banner::before {
+  background: url('../assets/illustrations/technologies-banner.jpg') center right / cover no-repeat !important;
+  opacity: 0.85 !important;
+}
+
+.achievements-banner::before {
+  background: url('../assets/illustrations/achievements-banner.jpg') center right / cover no-repeat !important;
+  opacity: 0.85 !important;
+}
+
+.milestone-info, .milestone-progress-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.milestone-info {
+  flex: 1;
+}
+
+.milestone-tag {
+  font-size: var(--font-size-xs);
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+.milestone-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+}
+
+.milestone-desc {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-4);
+}
+
+.milestone-progress-wrap {
+  width: 260px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.milestone-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* Metric Cards Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-16);
+  margin-bottom: var(--space-24);
+}
+
+.metric-card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-16) var(--space-20);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-gold-border);
+}
+
+.metric-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color var(--transition-fast);
+}
+
+.metric-card.gold::before {
+  background-color: var(--color-gold);
+}
+
+.metric-card.green::before {
+  background-color: var(--color-positive);
+}
+
+.metric-card.blue::before {
+  background-color: var(--color-info);
+}
+
+.metric-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+}
+
+.metric-card-label {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: var(--font-weight-semibold);
+}
+
+.metric-card-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-text-dim);
+}
+
+.metric-card-value {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  line-height: 1.1;
+  position: relative;
+  z-index: 2;
+}
+
+.metric-card-sub {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-dim);
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   4 Pillars Luxury Photo Portals
+   High-definition photography cards with ambient gradient overlays
+   ========================================================================== */
+.pillar-portal-card {
+  position: relative;
+  min-height: 140px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  padding: var(--space-16) var(--space-20);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pillar-portal-card:hover {
+  transform: translateY(-3px) scale(1.01);
+  border-color: var(--color-gold-border);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65), 0 0 16px var(--color-gold-glow);
+}
+
+.portal-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.pillar-portal-card:hover .portal-bg-img {
+  transform: scale(1.08);
+}
+
+.portal-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(10, 14, 24, 0.88) 0%, rgba(8, 11, 18, 0.94) 70%, rgba(5, 7, 12, 0.98) 100%);
+  pointer-events: none;
+  transition: background 0.25s ease;
+}
+
+.pillar-portal-card:hover .portal-overlay {
+  background: linear-gradient(135deg, rgba(10, 14, 24, 0.78) 0%, rgba(8, 11, 18, 0.88) 70%, rgba(5, 7, 12, 0.95) 100%);
+}
+
+.portal-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  height: 100%;
+  justify-content: space-between;
+}
+
+.portal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.portal-tag {
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gold);
+}
+
+.portal-value {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-extrabold);
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  letter-spacing: -0.01em;
+}
+
+.portal-action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gold);
+}
+
+.portal-mini-insignias {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.portal-mini-insignia-icon {
+  width: 22px;
+  height: 22px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+/* Dashboard 2-column layout */
+.dashboard-columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-24);
+  margin-top: var(--space-24);
+}
+
+.dashboard-main-col, .dashboard-side-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-24);
+}
+
+/* Portfolio Summary Breakdown */
+.portfolio-breakdown-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.portfolio-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-10) var(--space-12);
+  background-color: var(--color-surface-raised);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.portfolio-item-icon {
+  width: 28px;
+  height: 28px;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.portfolio-item-details {
+  flex: 1;
+  min-width: 0;
+}
+
+.portfolio-item-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.portfolio-item-name {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.portfolio-item-income {
+  font-family: var(--font-family-mono);
+  font-size: var(--font-size-sm);
+  color: var(--color-positive);
+  font-weight: var(--font-weight-semibold);
+}
+
+.portfolio-item-bar-bg {
+  height: 4px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.portfolio-item-bar-fill {
+  height: 100%;
+  background-color: var(--color-gold);
+  border-radius: var(--radius-full);
+}
+
+/* Investment Recommendation Card */
+.recommendation-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-20);
+  box-shadow: var(--shadow-sm);
+}
+
+.rec-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+  color: var(--color-gold);
+  font-size: var(--font-size-xs);
+  text-transform: uppercase;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+}
+
+.rec-content {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-16);
+}
+
+.rec-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+  padding: var(--space-10);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+/* Tutorial / Onboarding Callout */
+.onboarding-guide-card {
+  background: var(--gradient-gold-card);
+  border: 1px solid var(--color-gold-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-20);
+  margin-bottom: var(--space-24);
+  position: relative;
+  box-shadow: var(--shadow-md);
+}
+
+.onboarding-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-16);
+  margin-top: var(--space-16);
+}
+
+.onboarding-step-item {
+  display: flex;
+  gap: var(--space-12);
+}
+
+.step-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-info-bg);
+  border: 1px solid var(--color-info-border);
+  color: var(--color-info);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-text h4 {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.step-text p {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}

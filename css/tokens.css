@@ -1,0 +1,236 @@
+/* ==========================================================================
+   Business Empire: Design Tokens & Luxury Color Palettes
+   Theme System:
+     1. Default: Obsidian & 24K Champagne Gold (Classic Tycoon)
+     2. data-theme="emerald": Emerald Dynasty / Macau VIP
+     3. data-theme="sapphire": Midnight Sapphire / Wall Street
+     4. data-theme="cyber": Cyber Carbon / Tokyo Syndicate
+   ========================================================================== */
+
+:root {
+  /* ========================================================================
+     THEME 1: Obsidian & 24K Champagne Gold (Default Executive Luxury)
+     ======================================================================== */
+  --theme-name: "Obsidian Gold";
+  --color-bg: #090C12;
+  --color-bg-mesh: radial-gradient(ellipse at 50% -15%, #141B2D 0%, #090C12 65%, #05070A 100%);
+  --color-surface: #0E131F;
+  --color-surface-solid: #0A0E18;
+  --color-surface-raised: #151D2E;
+  --color-surface-hover: #1C273D;
+  --color-surface-active: #24324E;
+  --color-border: rgba(212, 175, 55, 0.16);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-focus: #D4AF37;
+
+  /* Accent Colors - Imperial 24K Champagne Gold */
+  --color-gold: #D4AF37;
+  --color-gold-hover: #E5C07B;
+  --color-gold-active: #B8860B;
+  --color-gold-subtle: rgba(212, 175, 55, 0.14);
+  --color-gold-border: rgba(212, 175, 55, 0.38);
+  --color-gold-glow: rgba(212, 175, 55, 0.45);
+  --gradient-gold: linear-gradient(135deg, #FDE68A 0%, #D4AF37 50%, #926E1E 100%);
+  --gradient-gold-card: linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, rgba(14, 19, 31, 0.98) 75%);
+  --gradient-gold-shimmer: linear-gradient(90deg, #FFF6D6 0%, #D4AF37 50%, #8C6D1F 100%);
+
+  /* Typography Colors - Diamond White & Warm Slate */
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-text-dim: #64748B;
+  --color-text-inverse: #090C12;
+
+  /* Semantic Feedback Colors */
+  --color-positive: #10B981;
+  --color-positive-hover: #059669;
+  --color-positive-bg: rgba(16, 185, 129, 0.12);
+  --color-positive-border: rgba(16, 185, 129, 0.35);
+
+  --color-negative: #F43F5E;
+  --color-negative-hover: #E11D48;
+  --color-negative-bg: rgba(244, 63, 94, 0.12);
+  --color-negative-border: rgba(244, 63, 94, 0.35);
+
+  --color-info: #38BDF8;
+  --color-info-hover: #0284C7;
+  --color-info-bg: rgba(56, 189, 248, 0.12);
+  --color-info-border: rgba(56, 189, 248, 0.35);
+
+  /* Border Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  /* Spacing Scale */
+  --space-2: 2px;
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+
+  /* Modern Web Typography */
+  --font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-family-display: 'Space Grotesk', 'Outfit', sans-serif;
+  --font-family-mono: 'JetBrains Mono', ui-monospace, Menlo, Consolas, monospace;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.84375rem; /* 13.5px */
+  --font-size-base: 0.9375rem;/* 15px */
+  --font-size-md: 1.0625rem;  /* 17px */
+  --font-size-lg: 1.25rem;    /* 20px */
+  --font-size-xl: 1.5rem;     /* 24px */
+  --font-size-2xl: 1.875rem;  /* 30px */
+  --font-size-3xl: 2.25rem;   /* 36px */
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --line-height-tight: 1.2;
+  --line-height-base: 1.5;
+  --line-height-relaxed: 1.65;
+
+  /* Glassmorphism & Elevation */
+  --glass-blur: blur(14px);
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.55), 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.7), 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-gold: 0 0 24px rgba(212, 175, 55, 0.35);
+  --shadow-neon-green: 0 0 20px rgba(16, 185, 129, 0.35);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 240ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 380ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Layout Constants */
+  --sidebar-width: 260px;
+  --topbar-height: 72px;
+}
+
+/* ========================================================================
+   THEME 2: Emerald Dynasty / Macau VIP Casino & Banking
+   ======================================================================== */
+[data-theme="emerald"] {
+  --theme-name: "Emerald Dynasty";
+  --color-bg: #05100B;
+  --color-bg-mesh: radial-gradient(ellipse at 50% -15%, #0B2519 0%, #05100B 65%, #020704 100%);
+  --color-surface: #091A12;
+  --color-surface-solid: #06130E;
+  --color-surface-raised: #0F2A1E;
+  --color-surface-hover: #15392A;
+  --color-surface-active: #1C4A37;
+  --color-border: rgba(16, 185, 129, 0.22);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-focus: #10B981;
+
+  --color-gold: #10B981;
+  --color-gold-hover: #34D399;
+  --color-gold-active: #059669;
+  --color-gold-subtle: rgba(16, 185, 129, 0.16);
+  --color-gold-border: rgba(16, 185, 129, 0.42);
+  --color-gold-glow: rgba(16, 185, 129, 0.45);
+  --gradient-gold: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #047857 100%);
+  --gradient-gold-card: linear-gradient(135deg, rgba(16, 185, 129, 0.16) 0%, rgba(9, 26, 18, 0.98) 75%);
+  --gradient-gold-shimmer: linear-gradient(90deg, #A7F3D0 0%, #10B981 50%, #065F46 100%);
+
+  --color-positive: #34D399;
+  --color-positive-hover: #10B981;
+  --color-positive-bg: rgba(52, 211, 153, 0.14);
+  --color-positive-border: rgba(52, 211, 153, 0.38);
+
+  --color-info: #FBBF24;
+  --color-info-hover: #D97706;
+  --color-info-bg: rgba(251, 191, 36, 0.12);
+  --color-info-border: rgba(251, 191, 36, 0.35);
+
+  --shadow-gold: 0 0 24px rgba(16, 185, 129, 0.35);
+}
+
+/* ========================================================================
+   THEME 3: Midnight Sapphire / Wall Street Tycoon
+   ======================================================================== */
+[data-theme="sapphire"] {
+  --theme-name: "Midnight Sapphire";
+  --color-bg: #060B16;
+  --color-bg-mesh: radial-gradient(ellipse at 50% -15%, #0F1E3D 0%, #060B16 65%, #020409 100%);
+  --color-surface: #0A1224;
+  --color-surface-solid: #070D1B;
+  --color-surface-raised: #101D38;
+  --color-surface-hover: #17294D;
+  --color-surface-active: #1F3664;
+  --color-border: rgba(59, 130, 246, 0.22);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-focus: #3B82F6;
+
+  --color-gold: #38BDF8;
+  --color-gold-hover: #7DD3FC;
+  --color-gold-active: #0284C7;
+  --color-gold-subtle: rgba(56, 189, 248, 0.16);
+  --color-gold-border: rgba(56, 189, 248, 0.42);
+  --color-gold-glow: rgba(56, 189, 248, 0.45);
+  --gradient-gold: linear-gradient(135deg, #BAE6FD 0%, #38BDF8 50%, #0369A1 100%);
+  --gradient-gold-card: linear-gradient(135deg, rgba(56, 189, 248, 0.16) 0%, rgba(10, 18, 36, 0.98) 75%);
+  --gradient-gold-shimmer: linear-gradient(90deg, #E0F2FE 0%, #38BDF8 50%, #075985 100%);
+
+  --color-positive: #00F5D4;
+  --color-positive-hover: #00D2B4;
+  --color-positive-bg: rgba(0, 245, 212, 0.14);
+  --color-positive-border: rgba(0, 245, 212, 0.38);
+
+  --color-info: #60A5FA;
+  --color-info-hover: #3B82F6;
+  --color-info-bg: rgba(96, 165, 250, 0.14);
+  --color-info-border: rgba(96, 165, 250, 0.38);
+
+  --shadow-gold: 0 0 24px rgba(56, 189, 248, 0.35);
+}
+
+/* ========================================================================
+   THEME 4: Cyber Carbon / Tokyo Syndicate
+   ======================================================================== */
+[data-theme="cyber"] {
+  --theme-name: "Cyber Carbon";
+  --color-bg: #050608;
+  --color-bg-mesh: radial-gradient(ellipse at 50% -15%, #181926 0%, #050608 65%, #010203 100%);
+  --color-surface: #0E0F17;
+  --color-surface-solid: #0A0A10;
+  --color-surface-raised: #151724;
+  --color-surface-hover: #1E2133;
+  --color-surface-active: #272C44;
+  --color-border: rgba(245, 158, 11, 0.22);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-focus: #F59E0B;
+
+  --color-gold: #F59E0B;
+  --color-gold-hover: #FBBF24;
+  --color-gold-active: #D97706;
+  --color-gold-subtle: rgba(245, 158, 11, 0.16);
+  --color-gold-border: rgba(245, 158, 11, 0.42);
+  --color-gold-glow: rgba(245, 158, 11, 0.45);
+  --gradient-gold: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #B45309 100%);
+  --gradient-gold-card: linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(14, 15, 23, 0.98) 75%);
+  --gradient-gold-shimmer: linear-gradient(90deg, #FFFBEB 0%, #F59E0B 50%, #92400E 100%);
+
+  --color-positive: #10B981;
+  --color-positive-hover: #059669;
+  --color-positive-bg: rgba(16, 185, 129, 0.14);
+  --color-positive-border: rgba(16, 185, 129, 0.38);
+
+  --color-info: #EC4899;
+  --color-info-hover: #DB2777;
+  --color-info-bg: rgba(236, 72, 153, 0.14);
+  --color-info-border: rgba(236, 72, 153, 0.38);
+
+  --shadow-gold: 0 0 24px rgba(245, 158, 11, 0.35);
+}
